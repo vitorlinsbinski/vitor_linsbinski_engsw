@@ -2,7 +2,7 @@
 
 Repositório destinado aos estudos relacionados à disciplina de Engenharia de Software na UNEMAT
 
-- [vitor\_linsbinski\_engsw](#vitor_linsbinski_engsw)
+- [vitor_linsbinski_engsw](#vitor_linsbinski_engsw)
 - [1. Descrição do sistema](#1-descrição-do-sistema)
 - [2. Problema e descrição do negócio](#2-problema-e-descrição-do-negócio)
 - [3. Visão geral do sistema.](#3-visão-geral-do-sistema)
@@ -59,16 +59,71 @@ Descrição do sistema e suas relações
 
 # 4. Diagrama ER
 
-
 ```mermaid
 
 erDiagram
-    CLIENTE {
+    CLIENT {
         int id_cliente PK
         string nome
         string endereco
         string telefone
     }
+
+    ANIMAL {
+        int id
+        string nome
+        string especie
+        string condicoes
+        string racao
+        string habitos
+    }
+
+    VETERINARIO {
+        int id
+        string nome
+        string especialidade
+    }
+
+    ATENDENTE {
+        int id
+        string nome
+        string turno
+    }
+
+    AGENDA {
+        int id
+        date data
+        time hora
+        int id_animal
+        int id_veterinario
+    }
+
+    PRONTUARIO {
+        int id
+        int id_animal
+        text observacoes
+        text receita
+        date data
+    }
+
+    PAGAMENTO {
+        int id
+        int id_cliente
+        float valor
+        date data
+        string metodo
+    }
+
+    CLIENT ||--o{ ANIMAL : "possui"
+    ANIMAL ||--o{ VETERINARIO : "atendido por"
+    CLIENT ||--o{ PAGAMENTO : "realiza"
+    ANIMAL ||--o{ AGENDA : "agendado para"
+    VETERINARIO ||--o{ AGENDA : "realiza"
+    AGENDA ||--o{ PRONTUARIO : "gera"
+    CLIENT ||--o{ PAGAMENTO : "paga"
+    CLIENT ||--o{ ANIMAL : "tem"
+    ANIMAL ||--o{ PRONTUARIO : "possui"
+    CLIENT ||--o{ ATENDENTE : "atendido por"
 
 ```
 
