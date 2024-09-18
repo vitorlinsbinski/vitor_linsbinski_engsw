@@ -20,6 +20,8 @@ Repositório destinado aos estudos relacionados à disciplina de Engenharia de S
 - [14. Manutenção e instalação](#14-manutenção-e-instalação)
 - [15. Glossário](#15-glossário)
 - [16. Script SQL](#16-script-sql)
+  - [16.1. Comandos CREATE TABLE:](#161-comandos-create-table)
+  - [16.2. Comandos INSERT gerando dados fictícios](#162-comandos-insert-gerando-dados-fictícios)
 
 # 1. Descrição do sistema
 
@@ -152,3 +154,160 @@ erDiagram
 # 15. Glossário
 
 # 16. Script SQL
+
+## 16.1. Comandos CREATE TABLE:
+
+```SQL
+-- Tabela de Clientes
+CREATE TABLE Cliente (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    endereco VARCHAR(255),
+    telefone VARCHAR(20),
+    email VARCHAR(100),
+    CONSTRAINT UC_Cliente UNIQUE (email)
+);
+
+-- Tabela de Animais
+CREATE TABLE Animal (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    especie ENUM('gato', 'cachorro') NOT NULL,
+    condicoes TEXT,
+    racao VARCHAR(100),
+    habitos TEXT,
+    id_cliente INT,
+    FOREIGN KEY (id_cliente) REFERENCES Cliente(id) ON DELETE CASCADE
+);
+
+-- Tabela de Veterinários
+CREATE TABLE Veterinario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    especialidade VARCHAR(100)
+);
+
+-- Tabela de Atendentes
+CREATE TABLE Atendente (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    turno VARCHAR(50)
+);
+
+-- Tabela de Agenda para atendimento de animais
+CREATE TABLE Agenda (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    data DATE NOT NULL,
+    hora TIME NOT NULL,
+    id_animal INT,
+    id_veterinario INT,
+    FOREIGN KEY (id_animal) REFERENCES Animal(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_veterinario) REFERENCES Veterinario(id) ON DELETE CASCADE
+);
+
+-- Tabela de Prontuários
+CREATE TABLE Prontuario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_animal INT,
+    observacoes TEXT,
+    receita TEXT,
+    data DATE NOT NULL,
+    FOREIGN KEY (id_animal) REFERENCES Animal(id) ON DELETE CASCADE
+);
+
+-- Tabela de Pagamentos
+CREATE TABLE Pagamento (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    valor DECIMAL(10, 2) NOT NULL,
+    data DATE NOT NULL,
+    metodo ENUM('cartao', 'dinheiro') NOT NULL,
+    FOREIGN KEY (id_cliente) REFERENCES Cliente(id) ON DELETE CASCADE
+);
+
+-- Tabela de Compras (por exemplo, brinquedos para animais)
+CREATE TABLE Compra (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    descricao VARCHAR(255),
+    valor DECIMAL(10, 2),
+    data DATE NOT NULL,
+    FOREIGN KEY (id_cliente) REFERENCES Cliente(id) ON DELETE CASCADE
+);
+
+-- Relacionamento de atendimento de mais de um veterinário por animal
+CREATE TABLE Veterinario_Animal (
+    id_veterinario INT,
+    id_animal INT,
+    PRIMARY KEY (id_veterinario, id_animal),
+    FOREIGN KEY (id_veterinario) REFERENCES Veterinario(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_animal) REFERENCES Animal(id) ON DELETE CASCADE
+);
+```
+
+## 16.2. Comandos INSERT gerando dados fictícios
+
+```SQL
+  -- Inserindo Clientes
+INSERT INTO Cliente (nome, endereco, telefone, email)
+VALUES
+('João Silva', 'Rua A, 123', '11999999999', 'joao.silva@email.com'),
+('Maria Souza', 'Rua B, 456', '11888888888', 'maria.souza@email.com'),
+('Carlos Pereira', 'Rua C, 789', '11777777777', 'carlos.pereira@email.com');
+
+-- Inserindo Animais
+INSERT INTO Animal (nome, especie, condicoes, racao, habitos, id_cliente)
+VALUES
+('Rex', 'cachorro', 'Saudável', 'Ração Premium', 'Corre muito no parque', 1),
+('Mimi', 'gato', 'Problema renal', 'Ração especial para rins', 'Gosta de dormir muito', 2),
+('Bobby', 'cachorro', 'Sobrepeso', 'Ração light', 'Gosta de comer o dia todo', 3);
+
+-- Inserindo Veterinários
+INSERT INTO Veterinario (nome, especialidade)
+VALUES
+('Dr. Ricardo Lima', 'Clínico Geral'),
+('Dra. Ana Torres', 'Dermatologia'),
+('Dr. Marcos Almeida', 'Ortopedia');
+
+-- Inserindo Atendentes
+INSERT INTO Atendente (nome, turno)
+VALUES
+('Carla Mendes', 'Manhã'),
+('Paulo Santos', 'Tarde');
+
+-- Inserindo Agenda
+INSERT INTO Agenda (data, hora, id_animal, id_veterinario)
+VALUES
+('2024-09-20', '10:30:00', 1, 1),
+('2024-09-20', '14:00:00', 2, 2),
+('2024-09-21', '09:00:00', 3, 3);
+
+-- Inserindo Prontuários
+INSERT INTO Prontuario (id_animal, observacoes, receita, data)
+VALUES
+(1, 'Animal saudável, sem alterações.', 'Vermífugo de 6 em 6 meses', '2024-09-20'),
+(2, 'Animal com problemas renais, prescrito dieta especial.', 'Dieta renal e exames mensais', '2024-09-20'),
+(3, 'Animal com sobrepeso. Prescrito ração light e exercícios.', 'Ração light e caminhadas diárias', '2024-09-21');
+
+-- Inserindo Pagamentos
+INSERT INTO Pagamento (id_cliente, valor, data, metodo)
+VALUES
+(1, 200.00, '2024-09-20', 'cartao'),
+(2, 300.00, '2024-09-20', 'dinheiro'),
+(3, 150.00, '2024-09-21', 'cartao');
+
+-- Inserindo Compras
+INSERT INTO Compra (id_cliente, descricao, valor, data)
+VALUES
+(1, 'Brinquedo de morder para cachorro', 50.00, '2024-09-20'),
+(2, 'Arranhador para gatos', 80.00, '2024-09-20'),
+(3, 'Coleira para cachorro', 30.00, '2024-09-21');
+
+-- Inserindo Relacionamento entre Veterinários e Animais
+INSERT INTO Veterinario_Animal (id_veterinario, id_animal)
+VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(1, 3);  -- O animal 'Bobby' também é atendido por Dr. Ricardo Lima
+```
