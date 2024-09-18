@@ -7,7 +7,7 @@ Repositório destinado aos estudos relacionados à disciplina de Engenharia de S
 - [2. Problema e descrição do negócio](#2-problema-e-descrição-do-negócio)
 - [3. Visão geral do sistema.](#3-visão-geral-do-sistema)
 - [4. Diagrama ER](#4-diagrama-er)
-- [5. Diagrama de classe](#5-diagrama-de-classe)
+- [5. Diagrama de classes](#5-diagrama-de-classes)
 - [6. Casos de uso](#6-casos-de-uso)
   - [6.1 Histórias de usuário](#61-histórias-de-usuário)
 - [7. Diagrama de componentes](#7-diagrama-de-componentes)
@@ -64,7 +64,7 @@ Descrição do sistema e suas relações
 ```mermaid
 
 erDiagram
-    CLIENT {
+    CLIENTE {
         int id_cliente PK
         string nome
         string endereco
@@ -116,20 +116,94 @@ erDiagram
         string metodo
     }
 
-    CLIENT ||--o{ ANIMAL : "possui"
+    CLIENTE ||--o{ ANIMAL : "possui"
     ANIMAL ||--o{ VETERINARIO : "atendido por"
-    CLIENT ||--o{ PAGAMENTO : "realiza"
+    CLIENTE ||--o{ PAGAMENTO : "realiza"
     ANIMAL ||--o{ AGENDA : "agendado para"
     VETERINARIO ||--o{ AGENDA : "realiza"
     AGENDA ||--o{ PRONTUARIO : "gera"
-    CLIENT ||--o{ PAGAMENTO : "paga"
-    CLIENT ||--o{ ANIMAL : "tem"
+    CLIENTE ||--o{ PAGAMENTO : "paga"
+    CLIENTE ||--o{ ANIMAL : "tem"
     ANIMAL ||--o{ PRONTUARIO : "possui"
-    CLIENT ||--o{ ATENDENTE : "atendido por"
+    CLIENTE ||--o{ ATENDENTE : "atendido por"
 
 ```
 
-# 5. Diagrama de classe
+# 5. Diagrama de classes
+
+```mermaid
+classDiagram
+    class Cliente {
+        +String nome
+        +String endereco
+        +String telefone
+        +String email
+        +listarAnimais()
+    }
+
+    class Animal {
+        +String nome
+        +String especie
+        +String condicoes
+        +String racao
+        +String habitos
+        +obterProntuario()
+    }
+
+    class Veterinario {
+        +String nome
+        +String especialidade
+        +realizarEntrevista(Cliente)
+        +examinarAnimal(Animal)
+        +gerarProntuario(Animal)
+        +emitirReceita(Animal)
+        +agendarRetorno(Animal)
+        +gerarRelatorioAtendimentos()
+    }
+
+    class Atendente {
+        +String nome
+        +String turno
+        +verificarAgenda()
+        +colocarNaFila(Cliente, Animal)
+        +levarAoVeterinario(Cliente, Animal)
+    }
+
+    class Agenda {
+        +Date data
+        +Time hora
+        +marcarConsulta(Animal, Veterinario)
+    }
+
+    class Prontuario {
+        +Date data
+        +String observacoes
+        +String receita
+        +consultarHistorico()
+    }
+
+    class Pagamento {
+        +Float valor
+        +Date data
+        +String metodo
+        +registrarPagamento(Cliente)
+    }
+
+    class Compra {
+        +String descricao
+        +Float valor
+        +Date data
+        +realizarCompra(Cliente)
+    }
+
+    Cliente "1" --> "0..*" Animal : possui
+    Animal "1" --> "1" Prontuario : tem
+    Veterinario "0..*" --> "1" Animal : atende
+    Agenda "1" --> "0..*" Animal : agendaConsulta
+    Atendente "0..*" --> "0..*" Cliente : atende
+    Pagamento "0..*" --> "1" Cliente : pertence
+    Compra "0..*" --> "1" Cliente : pertence
+```
 
 # 6. Casos de uso
 
