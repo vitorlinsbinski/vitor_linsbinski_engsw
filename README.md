@@ -2,7 +2,7 @@
 
 Repositório destinado aos estudos relacionados à disciplina de Engenharia de Software na UNEMAT
 
-- [vitor_linsbinski_engsw](#vitor_linsbinski_engsw)
+- [vitor\_linsbinski\_engsw](#vitor_linsbinski_engsw)
 - [1. Descrição do sistema](#1-descrição-do-sistema)
 - [2. Problema e descrição do negócio](#2-problema-e-descrição-do-negócio)
 - [3. Visão geral do sistema.](#3-visão-geral-do-sistema)
@@ -58,6 +58,19 @@ O projeto a seguir apresenta um sistema desenvolvido para um petshop. A empresa 
 Descrição do sistema e suas relações
 
 # 4. Diagrama ER
+
+
+```mermaid
+
+erDiagram
+    CLIENTE {
+        int id_cliente PK
+        string nome
+        string endereco
+        string telefone
+    }
+
+```
 
 # 5. Diagrama de classe
 
