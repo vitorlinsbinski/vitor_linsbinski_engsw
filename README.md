@@ -209,6 +209,8 @@ classDiagram
 
 ## 6.1 Histórias de usuário
 
+<img src="./diagrama_casos_de_uso.jpg"/>
+
 # 7. Diagrama de componentes
 
 # 8. Diagrama de implantação
