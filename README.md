@@ -2,7 +2,7 @@
 
 Repositório destinado aos estudos relacionados à disciplina de Engenharia de Software na UNEMAT
 
-- [vitor_linsbinski_engsw](#vitor_linsbinski_engsw)
+- [vitor\_linsbinski\_engsw](#vitor_linsbinski_engsw)
 - [1. Descrição do sistema](#1-descrição-do-sistema)
 - [2. Problema e descrição do negócio](#2-problema-e-descrição-do-negócio)
 - [3. Visão geral do sistema.](#3-visão-geral-do-sistema)
@@ -10,6 +10,25 @@ Repositório destinado aos estudos relacionados à disciplina de Engenharia de S
 - [5. Diagrama de classes](#5-diagrama-de-classes)
 - [6. Casos de uso](#6-casos-de-uso)
   - [6.1 Histórias de usuário](#61-histórias-de-usuário)
+    - [Histórias de Usuário para a Clínica Veterinária](#histórias-de-usuário-para-a-clínica-veterinária)
+      - [Cadastro de Clientes e Animais](#cadastro-de-clientes-e-animais)
+      - [Informar Condições do Animal](#informar-condições-do-animal)
+      - [Informar Tipo de Ração](#informar-tipo-de-ração)
+      - [Informar Hábitos do Animal](#informar-hábitos-do-animal)
+      - [Agendamento de Atendimento](#agendamento-de-atendimento)
+      - [Atendimento e Ficha do Animal](#atendimento-e-ficha-do-animal)
+      - [Colocar na Fila de Espera](#colocar-na-fila-de-espera)
+      - [Realizar Entrevista](#realizar-entrevista)
+      - [Registrar Resultados da Entrevista](#registrar-resultados-da-entrevista)
+      - [Examinar Animal e Registrar Observações](#examinar-animal-e-registrar-observações)
+      - [Gerar Receita](#gerar-receita)
+      - [Comprar Brinquedos](#comprar-brinquedos)
+      - [Buscar Prontuários Antigos](#buscar-prontuários-antigos)
+      - [Agendar Retorno](#agendar-retorno)
+      - [Enviar Lembretes Automáticos](#enviar-lembretes-automáticos)
+      - [Gerar Relatórios de Atendimentos](#gerar-relatórios-de-atendimentos)
+      - [Realizar Pagamento](#realizar-pagamento)
+      - [Manter Histórico de Pagamentos](#manter-histórico-de-pagamentos)
 - [7. Diagrama de componentes](#7-diagrama-de-componentes)
 - [8. Diagrama de implantação](#8-diagrama-de-implantação)
 - [9. Protótipo de telas](#9-protótipo-de-telas)
@@ -207,9 +226,119 @@ classDiagram
 
 # 6. Casos de uso
 
+<img src="./diagrama_casos_de_uso.jpg"/>
+
 ## 6.1 Histórias de usuário
 
-<img src="./diagrama_casos_de_uso.jpg"/>
+### Histórias de Usuário para a Clínica Veterinária
+
+#### Cadastro de Clientes e Animais
+
+- **Como** um cliente,
+- **Quero** me cadastrar e cadastrar meu animal,
+- **Para que** eu possa utilizar os serviços da clínica.
+
+#### Informar Condições do Animal
+
+- **Como** um cliente,
+- **Quero** informar as condições nas quais meu animal chega,
+- **Para que** o veterinário possa realizar uma avaliação adequada.
+
+#### Informar Tipo de Ração
+
+- **Como** um cliente,
+- **Quero** informar o tipo de ração que meu animal come,
+- **Para que** o veterinário tenha informações relevantes sobre a dieta do meu animal.
+
+#### Informar Hábitos do Animal
+
+- **Como** um cliente,
+- **Quero** informar os hábitos do meu animal,
+- **Para que** o veterinário possa entender melhor o comportamento dele.
+
+#### Agendamento de Atendimento
+
+- **Como** um cliente,
+- **Quero** agendar um horário para atendimento do meu animal,
+- **Para que** eu possa garantir que serei atendido em um momento conveniente.
+
+#### Atendimento e Ficha do Animal
+
+- **Como** um atendente,
+- **Quero** verificar a agenda disponível com um veterinário,
+- **Para que** eu possa agendar o atendimento do cliente e seu animal.
+
+#### Colocar na Fila de Espera
+
+- **Como** um atendente,
+- **Quero** colocar o cliente e seu animal na fila de espera,
+- **Para que** eles sejam atendidos assim que houver disponibilidade.
+
+#### Realizar Entrevista
+
+- **Como** um veterinário,
+- **Quero** realizar uma entrevista com o dono do animal,
+- **Para que** eu possa coletar informações relevantes para o atendimento.
+
+#### Registrar Resultados da Entrevista
+
+- **Como** um veterinário,
+- **Quero** registrar os resultados da entrevista em um formulário,
+- **Para que** haja um histórico documentado do atendimento.
+
+#### Examinar Animal e Registrar Observações
+
+- **Como** um veterinário,
+- **Quero** examinar o animal e registrar minhas observações no prontuário,
+- **Para que** eu possa acompanhar a saúde do animal ao longo do tempo.
+
+#### Gerar Receita
+
+- **Como** um veterinário,
+- **Quero** gerar uma receita para o animal, se necessário,
+- **Para que** o cliente possa adquirir os medicamentos ou tratamentos recomendados.
+
+#### Comprar Brinquedos
+
+- **Como** um cliente,
+- **Quero** comprar brinquedos para meu animal,
+- **Para que** eu possa proporcionar momentos de diversão para ele.
+
+#### Buscar Prontuários Antigos
+
+- **Como** um veterinário,
+- **Quero** buscar prontuários antigos para consulta,
+- **Para que** eu possa verificar o histórico de atendimentos do animal.
+
+#### Agendar Retorno
+
+- **Como** um veterinário,
+- **Quero** agendar retornos para acompanhamento do animal,
+- **Para que** eu possa garantir que o animal receba a atenção contínua necessária.
+
+#### Enviar Lembretes Automáticos
+
+- **Como** um sistema,
+- **Quero** enviar lembretes automáticos aos donos sobre retornos agendados,
+- **Para que** eles não esqueçam dos compromissos.
+
+#### Gerar Relatórios de Atendimentos
+
+- **Como** um gerente da clínica,
+- **Quero** gerar relatórios sobre atendimentos realizados por veterinário,
+- **Para que** eu possa analisar o desempenho e as operações da clínica.
+
+#### Realizar Pagamento
+
+- **Como** um cliente,
+- **Quero** pagar pelos serviços da clínica através de cartão ou dinheiro,
+- **Para que** eu tenha flexibilidade nas formas de pagamento.
+
+#### Manter Histórico de Pagamentos
+
+- **Como** um sistema,
+- **Quero** manter um histórico de pagamentos e faturamento dos clientes,
+- **Para que** a clínica possa ter controle financeiro e histórico de serviços prestados.   
 
 # 7. Diagrama de componentes
 
