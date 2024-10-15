@@ -394,6 +394,44 @@ graph TD
 
 # 11. Pilha tecnológica
 
+```mermaid
+graph TD
+    subgraph Frontend
+        A1[Navegador Web]
+        A2[App Mobile]
+    end
+
+    subgraph Backend
+        B1[Aplicação Web - Node.js/Express]
+        B2[API REST - Node.js]
+        B3[Gerenciamento de Autenticação - JWT/OAuth]
+        B4[Serviço de Lembretes - Node.js/CRON]
+    end
+
+    subgraph Database
+        C1[Banco de Dados Relacional - PostgreSQL]
+        C2[Cache - Redis]
+    end
+
+    subgraph Infrastructure
+        D1[Servidor Web - Nginx]
+        D2[Servidor de Email - SMTP]
+        D3[Servidor de Aplicação - Docker]
+        D4[Hospedagem - AWS]
+    end
+
+    A1 --> B1
+    A2 --> B1
+    B1 --> B2
+    B2 --> C1
+    B2 --> C2
+    B4 --> C1
+    B4 --> D2
+    D1 --> B1
+    B1 --> D3
+    D3 --> D4
+```
+
 # 12. Requisitos de sistemas
 
 # 13. Considerações sobre segurança
