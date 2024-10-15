@@ -2,7 +2,7 @@
 
 Repositório destinado aos estudos relacionados à disciplina de Engenharia de Software na UNEMAT
 
-- [vitor\_linsbinski\_engsw](#vitor_linsbinski_engsw)
+- [vitor_linsbinski_engsw](#vitor_linsbinski_engsw)
 - [1. Descrição do sistema](#1-descrição-do-sistema)
 - [2. Problema e descrição do negócio](#2-problema-e-descrição-do-negócio)
 - [3. Visão geral do sistema.](#3-visão-geral-do-sistema)
@@ -338,13 +338,22 @@ classDiagram
 
 - **Como** um sistema,
 - **Quero** manter um histórico de pagamentos e faturamento dos clientes,
-- **Para que** a clínica possa ter controle financeiro e histórico de serviços prestados.   
+- **Para que** a clínica possa ter controle financeiro e histórico de serviços prestados.
 
 # 7. Diagrama de componentes
 
+<img src="diagrama_de_componentes.jpg">
+
 # 8. Diagrama de implantação
 
+<img src="diagrama_de_implantacao.jpg">
+
 # 9. Protótipo de telas
+
+<img src="print1.png">
+<img src="print2.png">
+<img src="print3.png">
+<img src="print4.png">
 
 # 10. Diagrama de navegação de telas
 
