@@ -2,7 +2,7 @@
 
 Repositório destinado aos estudos relacionados à disciplina de Engenharia de Software na UNEMAT
 
-- [vitor_linsbinski_engsw](#vitor_linsbinski_engsw)
+- [vitor\_linsbinski\_engsw](#vitor_linsbinski_engsw)
 - [1. Descrição do sistema](#1-descrição-do-sistema)
 - [2. Problema e descrição do negócio](#2-problema-e-descrição-do-negócio)
 - [3. Visão geral do sistema.](#3-visão-geral-do-sistema)
@@ -356,7 +356,40 @@ classDiagram
 <img src="print4.png">
 
 # 10. Diagrama de navegação de telas
+```mermaid
+graph TD
+    Login[Login] --> Menu[Menu Principal]
+    Menu --> CadastroCliente[Cadastro de Cliente]
+    Menu --> CadastroAnimal[Cadastro de Animal]
+    Menu --> Agenda[Agenda de Atendimentos]
+    Menu --> Atendimento[Atendimento]
+    Menu --> Prontuario[Consulta de Prontuários]
+    Menu --> Relatorios[Relatórios]
+    Menu --> Pagamentos[Pagamentos e Faturamento]
+    Menu --> Lembretes[Lembretes Automáticos]
+    Menu --> Loja[Loja de Produtos]
 
+    Atendimento --> Ficha[Ficha de Atendimento]
+    Atendimento --> Receita[Emissão de Receita]
+    Atendimento --> Entrevista[Entrevista com o Dono]
+    Atendimento --> Exame[Exame do Animal]
+
+    Agenda --> AgendarHorario[Agendar Horário]
+    Agenda --> VerificarDisponibilidade[Verificar Disponibilidade]
+    Agenda --> FilaDeEspera[Fila de Espera]
+
+    Prontuario --> ConsultaAntigos[Consultar Prontuários Antigos]
+
+    Pagamentos --> HistoricoPagamentos[Histórico de Pagamentos]
+    Pagamentos --> FormaPagamento[Forma de Pagamento]
+
+    Lembretes --> EnvioLembretes[Envio de Lembretes]
+    
+    Relatorios --> RelatorioVeterinario[Relatório por Veterinário]
+    Relatorios --> RelatorioAtendimentos[Relatório de Atendimentos]
+
+    Loja --> CompraBrinquedos[Compra de Brinquedos]
+```
 # 11. Pilha tecnológica
 
 # 12. Requisitos de sistemas
