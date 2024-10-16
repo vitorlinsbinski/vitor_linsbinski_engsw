@@ -35,12 +35,22 @@ Repositório destinado aos estudos relacionados à disciplina de Engenharia de S
 - [10. Diagrama de navegação de telas](#10-diagrama-de-navegação-de-telas)
 - [11. Pilha tecnológica](#11-pilha-tecnológica)
 - [12. Requisitos de sistemas](#12-requisitos-de-sistemas)
+  - [12.1. Requisitos do cliente](#121-requisitos-do-cliente)
+  - [12.2.2 Requisitos do server side](#1222-requisitos-do-server-side)
 - [13. Considerações sobre segurança](#13-considerações-sobre-segurança)
+  - [13.1. Lado cliente](#131-lado-cliente)
+  - [13.2. Lado servidor](#132-lado-servidor)
 - [14. Manutenção e instalação](#14-manutenção-e-instalação)
-- [15. Glossário](#15-glossário)
-- [16. Script SQL](#16-script-sql)
-  - [16.1. Comandos CREATE TABLE:](#161-comandos-create-table)
-  - [16.2. Comandos INSERT gerando dados fictícios](#162-comandos-insert-gerando-dados-fictícios)
+  - [14.1. Instalado no servidor](#141-instalado-no-servidor)
+  - [14.2. Manutenção](#142-manutenção)
+  - [14.3. Novas funcionalidades](#143-novas-funcionalidades)
+- [15. Treinamento](#15-treinamento)
+  - [15.1. Usuário](#151-usuário)
+  - [15.2. Admin](#152-admin)
+- [16. Glossário](#16-glossário)
+- [17. Script SQL](#17-script-sql)
+  - [17.1. Comandos CREATE TABLE:](#171-comandos-create-table)
+  - [17.2. Comandos INSERT gerando dados fictícios](#172-comandos-insert-gerando-dados-fictícios)
 
 # 1. Descrição do sistema
 
@@ -76,7 +86,11 @@ O projeto a seguir apresenta um sistema desenvolvido para um petshop. A empresa 
 
 # 3. Visão geral do sistema.
 
-Descrição do sistema e suas relações
+O sistema para a clínica veterinária tem como objetivo principal facilitar a gestão de atendimentos e serviços para animais de estimação, especificamente cães e gatos. Ele proporciona um ambiente digital onde clientes podem cadastrar seus animais, agendar consultas e acompanhar o histórico médico dos pets. Por outro lado, a equipe da clínica, composta por atendentes e veterinários, pode gerenciar o fluxo de atendimento, realizar avaliações, registrar prontuários e gerar receitas médicas.
+
+A plataforma é projetada para atender às necessidades de uma clínica de pequeno porte, automatizando tarefas administrativas e médicas, como a manutenção de agendas, o gerenciamento de filas de espera, a consulta de prontuários antigos e o envio de lembretes automáticos para os clientes. Além disso, o sistema oferece funcionalidades para a compra de produtos e serviços, bem como para o registro e acompanhamento de pagamentos, visando proporcionar uma experiência completa tanto para os profissionais da clínica quanto para os clientes.
+
+Essa solução abrange a integração de diversas áreas, como administração, saúde animal e comércio, permitindo à clínica operar de forma mais eficiente e com maior qualidade no atendimento aos seus clientes.
 
 # 4. Diagrama ER
 
@@ -434,15 +448,64 @@ graph TD
 
 # 12. Requisitos de sistemas
 
+## 12.1. Requisitos do cliente
+
+O cliente precisa de um navegador que seja compatível com HTML5, CSS3 e JavaScript.
+
+## 12.2.2 Requisitos do server side
+
+É necessário de um hardware para hospedar o Servidor Web (Apache), Servidor de Banco de Dados (MySQL), o próprio banco de dados com os dados populados, bem como a própria aplicação.
+
+Descrição de Hardware da Máquina Virtual:
+
+- 2 GB de memória
+- 2 vCPUs
+- 20 GB de disco SSD
+- 1 TB de transferência
+
 # 13. Considerações sobre segurança
+
+## 13.1. Lado cliente
+
+Regras de senha: catcha, quantidade mínima de caracteres, caracteres especiais, autenticação de 2 fatores, recuperação de senha com email.
+
+## 13.2. Lado servidor
+
+Linux.
+Política de backup de aplicação e banco.
+1x/mês 1 full backup.
+1x a cada 15 dias 1 full backuo.
+No final de cada dia um backup incremental.
+O admin do sistema não acessa dados do usuário.
 
 # 14. Manutenção e instalação
 
-# 15. Glossário
+## 14.1. Instalado no servidor
 
-# 16. Script SQL
+## 14.2. Manutenção
 
-## 16.1. Comandos CREATE TABLE:
+## 14.3. Novas funcionalidades
+
+1. Formalismo do pedido
+2. Cliente não dá palpite em beleza de tela
+3. Decidir sob 3 critérios:
+   a) Equipe tem tempo?
+   b) É economicamente viável?
+   c) É tecnologicamente viável?
+
+# 15. Treinamento
+
+## 15.1. Usuário
+
+Vídeo na web.
+
+## 15.2. Admin
+
+# 16. Glossário
+
+# 17. Script SQL
+
+## 17.1. Comandos CREATE TABLE:
 
 ```SQL
 -- Tabela de Clientes
@@ -532,7 +595,7 @@ CREATE TABLE Veterinario_Animal (
 );
 ```
 
-## 16.2. Comandos INSERT gerando dados fictícios
+## 17.2. Comandos INSERT gerando dados fictícios
 
 ```SQL
   -- Inserindo Clientes
