@@ -450,33 +450,105 @@ graph TD
 
 ## 12.1. Requisitos do cliente
 
-O cliente precisa de um navegador que seja compatível com HTML5, CSS3 e JavaScript.
+Para garantir o correto funcionamento do sistema na parte do cliente, os seguintes requisitos são necessários:
+
+Navegador Web Compatível: O sistema é acessível através de navegadores modernos que suportem as tecnologias HTML5, CSS3 e JavaScript. Recomenda-se o uso das versões mais recentes dos seguintes navegadores:
+
+Google Chrome (versão 90 ou superior)
+Mozilla Firefox (versão 88 ou superior)
+Microsoft Edge (versão 90 ou superior)
+Safari (versão 14 ou superior)
+Conexão à Internet: É necessário ter uma conexão estável à internet para acessar o sistema, realizar cadastros, agendar atendimentos e utilizar todas as funcionalidades disponíveis.
+
+Dispositivos Suportados: O sistema é responsivo e pode ser acessado tanto em desktops quanto em dispositivos móveis, como smartphones e tablets. As seguintes especificações mínimas são recomendadas:
+
+Desktop:
+Processador: Intel Core i3 ou equivalente
+Memória RAM: 4 GB
+Resolução de Tela: 1366x768 pixels
+Dispositivos Móveis:
+Sistema Operacional: Android 8.0 ou superior, iOS 12 ou superior
+Navegadores Compatíveis: Versões móveis dos navegadores mencionados acima
+Software Adicional:
+
+JavaScript Ativado: Necessário para o funcionamento dinâmico das páginas.
+Cookies Habilitados: Utilizados para manter sessões de usuários e personalizar a experiência.
 
 ## 12.2.2 Requisitos do server side
 
-É necessário de um hardware para hospedar o Servidor Web (Apache), Servidor de Banco de Dados (MySQL), o próprio banco de dados com os dados populados, bem como a própria aplicação.
+O ambiente de servidor deve atender aos seguintes requisitos para hospedar e operar o sistema de forma eficiente:
 
-Descrição de Hardware da Máquina Virtual:
-
-- 2 GB de memória
-- 2 vCPUs
-- 20 GB de disco SSD
-- 1 TB de transferência
+Hardware da Máquina Virtual
+Memória RAM: Mínimo de 2 GB
+Processador: 2 vCPUs
+Armazenamento: 20 GB de disco SSD
+Largura de Banda: 1 TB de transferência mensal
+Software e Tecnologias
+Sistema Operacional:
+Linux (preferencialmente distribuições como Ubuntu 20.04 LTS ou Debian 10)
+Servidor Web:
+Apache (versão 2.4 ou superior)
+MySQL (versão 5.7 ou superior)
+Ambiente de Execução:
+Node.js (versão 14 ou superior) para a aplicação backend
+Gerenciamento de Dependências:
+npm (Node Package Manager) ou yarn
+Ferramentas de Containerização:
+Docker para facilitar a implantação e escalabilidade da aplicação
+Serviços de Email:
+SMTP Server configurado para envio de notificações e lembretes automáticos
+Segurança e Autenticação:
+JWT/OAuth para gerenciamento de autenticação e autorização
+Serviços de Cache:
+Redis para otimização de desempenho e armazenamento de sessões
 
 # 13. Considerações sobre segurança
 
 ## 13.1. Lado cliente
 
-Regras de senha: catcha, quantidade mínima de caracteres, caracteres especiais, autenticação de 2 fatores, recuperação de senha com email.
+Para garantir a segurança dos dados e a integridade das operações no lado cliente, as seguintes medidas são implementadas:
+
+Regras de Senha:
+
+Complexidade: Senhas devem conter no mínimo 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.
+Validação de Captcha: Implementação de Captcha nos formulários de cadastro e login para prevenir ataques de força bruta e bots automatizados.
+Autenticação de Dois Fatores (2FA): Opção para os usuários habilitarem a 2FA, adicionando uma camada extra de segurança ao processo de login.
+Recuperação de Senha: Processo seguro de recuperação de senha através de links temporários enviados para o email registrado, garantindo que apenas o proprietário do email possa redefinir a senha.
+Proteção contra XSS e CSRF:
+
+Sanitização de Inputs: Todos os dados inseridos pelos usuários são sanitizados para prevenir ataques de Cross-Site Scripting (XSS).
+Tokens CSRF: Implementação de tokens CSRF em formulários para prevenir ataques de Cross-Site Request Forgery (CSRF).
+Comunicação Segura:
+
+HTTPS: Todas as comunicações entre o cliente e o servidor são criptografadas utilizando SSL/TLS para proteger os dados em trânsito.
+Armazenamento Seguro de Dados:
+
+Criptografia de Dados Sensíveis: Informações sensíveis armazenadas no navegador, como tokens de sessão, são criptografadas para evitar acessos não autorizados.
 
 ## 13.2. Lado servidor
 
-Linux.
-Política de backup de aplicação e banco.
-1x/mês 1 full backup.
-1x a cada 15 dias 1 full backuo.
-No final de cada dia um backup incremental.
-O admin do sistema não acessa dados do usuário.
+No lado do servidor, as seguintes práticas e políticas de segurança são adotadas:
+
+Sistema Operacional Seguro:
+Utilização de Linux com atualizações regulares para corrigir vulnerabilidades.
+Política de Backups:
+Backup Completo: Realizado uma vez por mês.
+Backup Completo Quinzenal: Realizado a cada 15 dias.
+Backup Incremental Diário: Realizado no final de cada dia para garantir a recuperação de dados atualizados.
+Gerenciamento de Acesso:
+Princípio do Menor Privilégio: Administradores e usuários do sistema possuem apenas as permissões necessárias para desempenhar suas funções.
+Autenticação e Autorização: Utilização de JWT/OAuth para garantir que apenas usuários autenticados e autorizados tenham acesso a determinadas funcionalidades e dados.
+Proteção de Dados:
+Criptografia em Descanso: Dados sensíveis armazenados no banco de dados são criptografados.
+Política de Não Acesso de Admin: Administradores do sistema não têm acesso direto aos dados dos usuários, garantindo a privacidade e confidencialidade das informações.
+Monitoramento e Logs:
+Logs de Acesso e Erros: Monitoramento contínuo dos logs para identificar e responder a atividades suspeitas ou anômalas.
+Atualizações e Patches:
+Aplicação regular de atualizações de segurança e patches para todos os softwares e dependências utilizados no servidor.
+Firewall e Segurança de Rede:
+Configuração de firewall para permitir apenas o tráfego necessário e bloquear tentativas de acesso não autorizadas.
+Proteção contra Ataques DDoS:
+Implementação de medidas para mitigar ataques de negação de serviço distribuída (DDoS), garantindo a disponibilidade do sistema.
 
 # 14. Manutenção e instalação
 
@@ -484,22 +556,90 @@ O admin do sistema não acessa dados do usuário.
 
 ## 14.2. Manutenção
 
+A manutenção do sistema é essencial para garantir seu funcionamento contínuo, seguro e eficiente. As atividades de manutenção incluem:
+
+Atualizações de Software:
+Aplicação regular de atualizações de segurança para o sistema operacional, servidores web, banco de dados e dependências da aplicação.
+Monitoramento de Performance:
+Utilização de ferramentas de monitoramento para acompanhar a performance do servidor, identificando e resolvendo gargalos ou problemas de desempenho.
+Gerenciamento de Backups:
+Verificação periódica dos backups para garantir que estão sendo realizados corretamente e que os dados podem ser restaurados quando necessário.
+Correção de Bugs:
+Identificação e resolução de erros reportados pelos usuários ou detectados através de logs e monitoramento.
+Otimização de Banco de Dados:
+Realização de manutenções no banco de dados, como otimização de índices, limpeza de registros obsoletos e verificação de integridade.
+Segurança Contínua:
+Realização de auditorias de segurança regulares para identificar e mitigar novas vulnerabilidades.
+Documentação Atualizada:
+Manutenção e atualização da documentação técnica e de usuário para refletir as mudanças e atualizações no sistema.
+Suporte Técnico:
+Disponibilização de canais de suporte para atender dúvidas e solucionar problemas enfrentados pelos usuários.
+
 ## 14.3. Novas funcionalidades
 
-1. Formalismo do pedido
-2. Cliente não dá palpite em beleza de tela
-3. Decidir sob 3 critérios:
-   a) Equipe tem tempo?
-   b) É economicamente viável?
-   c) É tecnologicamente viável?
+A adição de novas funcionalidades ao sistema deve seguir um processo estruturado para garantir sua viabilidade e alinhamento com os objetivos da clínica. As etapas para a implementação de novas funcionalidades incluem:
+
+Formalização do Pedido:
+Requisição Formal: Todas as solicitações de novas funcionalidades devem ser documentadas formalmente, detalhando os requisitos e os benefícios esperados.
+Feedback do Cliente:
+Evitar Influências Estéticas: O cliente pode sugerir funcionalidades com base em preferências estéticas, mas o foco deve ser na usabilidade e na funcionalidade do sistema.
+Análise de Viabilidade:
+Critérios de Avaliação:
+Disponibilidade da Equipe: Verificar se a equipe de desenvolvimento possui tempo e recursos para implementar a nova funcionalidade.
+Viabilidade Econômica: Avaliar se a implementação é financeiramente viável, considerando custos e benefícios.
+Viabilidade Tecnológica: Determinar se a tecnologia necessária para implementar a funcionalidade está disponível e é compatível com o sistema existente.
+Planejamento e Desenvolvimento:
+Design da Funcionalidade: Criação de diagramas e protótipos para visualizar a nova funcionalidade.
+Desenvolvimento: Implementação da funcionalidade conforme as melhores práticas de desenvolvimento.
+Testes: Realização de testes rigorosos para garantir que a nova funcionalidade não introduza bugs ou vulnerabilidades no sistema.
+Implantação e Treinamento:
+Deploy: Implementação da nova funcionalidade no ambiente de produção.
+Treinamento: Atualização da documentação e treinamento dos usuários sobre a nova funcionalidade.
+Monitoramento e Feedback:
+Avaliação de Uso: Monitoramento do uso da nova funcionalidade para identificar possíveis melhorias.
+Coleta de Feedback: Recebimento de feedback dos usuários para ajustes e refinamentos futuros.
 
 # 15. Treinamento
 
 ## 15.1. Usuário
 
-Vídeo na web.
+Para garantir que os usuários finais (clientes e funcionários da clínica) possam utilizar o sistema de forma eficiente e sem dificuldades, serão fornecidos os seguintes materiais e métodos de treinamento:
+
+Vídeos Tutoriais na Web:
+Introdução ao Sistema: Vídeos explicando as funcionalidades básicas, como cadastro de clientes e animais, agendamento de atendimentos e consulta de prontuários.
+Uso Avançado: Tutoriais sobre funcionalidades mais complexas, como geração de relatórios, gestão de pagamentos e envio de lembretes automáticos.
+Manuais de Usuário:
+Documentação Detalhada: Guias escritos que descrevem passo a passo como realizar diversas operações dentro do sistema.
+FAQs: Seção de perguntas frequentes para resolver dúvidas comuns dos usuários.
+Webinars e Sessões de Treinamento ao Vivo:
+Sessões Interativas: Webinars periódicos onde os usuários podem aprender sobre novas funcionalidades e tirar dúvidas em tempo real.
+Gravações Disponíveis: Todas as sessões serão gravadas e disponibilizadas para consulta posterior.
+Suporte Online:
+Chat de Suporte: Disponibilização de um canal de chat para suporte imediato durante o horário de funcionamento.
+Sistema de Tickets: Plataforma para que os usuários possam reportar problemas ou solicitar ajuda de forma estruturada.
+Feedback e Melhorias:
+Formulários de Feedback: Coleta de opiniões dos usuários sobre a experiência de uso e sugestões de melhorias.
+Atualizações Baseadas no Feedback: Implementação de melhorias contínuas com base nas sugestões recebidas.
 
 ## 15.2. Admin
+
+Os administradores do sistema, responsáveis pela gestão e manutenção da plataforma, receberão um treinamento mais aprofundado para garantir o pleno domínio das ferramentas e procedimentos necessários. O treinamento incluirá:
+
+Sessões Presenciais e Online:
+Workshops Práticos: Sessões hands-on onde os administradores aprendem a configurar, monitorar e gerenciar o sistema.
+Webinars Técnicos: Palestras online sobre temas avançados, como segurança, backup e recuperação de dados.
+Documentação Técnica Detalhada:
+Guias de Administração: Documentos que descrevem detalhadamente as tarefas administrativas, incluindo configuração de servidores, gerenciamento de usuários e monitoramento de performance.
+Procedimentos de Backup e Recuperação: Instruções passo a passo para realizar backups e restaurar dados em caso de necessidade.
+Acesso a Ferramentas de Monitoramento e Gestão:
+Dashboard de Administração: Interface centralizada para monitorar o estado do sistema, visualizar logs e gerenciar recursos.
+Ferramentas de Diagnóstico: Software e scripts para identificar e resolver problemas técnicos rapidamente.
+Políticas de Segurança e Compliance:
+Treinamento em Segurança da Informação: Educação sobre melhores práticas de segurança, incluindo gerenciamento de senhas, controle de acesso e proteção contra ameaças.
+Compliance com Regulamentações: Orientações sobre como garantir que o sistema esteja em conformidade com legislações e normas aplicáveis, como a LGPD (Lei Geral de Proteção de Dados).
+Suporte Continuado e Atualizações:
+Acesso a Suporte Técnico Especializado: Disponibilidade de suporte para resolver dúvidas técnicas e problemas complexos.
+Atualizações Regulares de Conhecimento: Informações sobre novas funcionalidades, atualizações de software e mudanças na infraestrutura.
 
 # 16. Glossário
 
