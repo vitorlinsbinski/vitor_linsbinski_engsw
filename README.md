@@ -5,6 +5,8 @@ Repositório destinado aos estudos relacionados à disciplina de Engenharia de S
 - [vitor_linsbinski_engsw](#vitor_linsbinski_engsw)
 - [1. Descrição do sistema](#1-descrição-do-sistema)
 - [2. Problema e descrição do negócio](#2-problema-e-descrição-do-negócio)
+  - [2.1. Requisitos](#21-requisitos)
+    - [Requisitos Funcionas e Não funcionalidades](#requisitos-funcionas-e-não-funcionalidades)
 - [3. Visão geral do sistema.](#3-visão-geral-do-sistema)
 - [4. Diagrama ER](#4-diagrama-er)
 - [5. Diagrama de classes](#5-diagrama-de-classes)
@@ -31,26 +33,31 @@ Repositório destinado aos estudos relacionados à disciplina de Engenharia de S
       - [Manter Histórico de Pagamentos](#manter-histórico-de-pagamentos)
 - [7. Diagrama de componentes](#7-diagrama-de-componentes)
 - [8. Diagrama de implantação](#8-diagrama-de-implantação)
-- [9. Protótipo de telas](#9-protótipo-de-telas)
-- [10. Diagrama de navegação de telas](#10-diagrama-de-navegação-de-telas)
-- [11. Pilha tecnológica](#11-pilha-tecnológica)
-- [12. Requisitos de sistemas](#12-requisitos-de-sistemas)
-  - [12.1. Requisitos do cliente](#121-requisitos-do-cliente)
-  - [12.2.2 Requisitos do server side](#1222-requisitos-do-server-side)
-- [13. Considerações sobre segurança](#13-considerações-sobre-segurança)
-  - [13.1. Lado cliente](#131-lado-cliente)
-  - [13.2. Lado servidor](#132-lado-servidor)
-- [14. Manutenção e instalação](#14-manutenção-e-instalação)
-  - [14.1. Instalado no servidor](#141-instalado-no-servidor)
-  - [14.2. Manutenção](#142-manutenção)
-  - [14.3. Novas funcionalidades](#143-novas-funcionalidades)
-- [15. Treinamento](#15-treinamento)
-  - [15.1. Usuário](#151-usuário)
-  - [15.2. Admin](#152-admin)
-- [16. Glossário](#16-glossário)
-- [17. Script SQL](#17-script-sql)
-  - [17.1. Comandos CREATE TABLE:](#171-comandos-create-table)
-  - [17.2. Comandos INSERT gerando dados fictícios](#172-comandos-insert-gerando-dados-fictícios)
+- [9. Diagramas C4](#9-diagramas-c4)
+  - [9.1. Diagrama de contexto](#91-diagrama-de-contexto)
+  - [9.2. Diagrama de container](#92-diagrama-de-container)
+  - [9.2. Diagrama de componente](#92-diagrama-de-componente)
+  - [9.2. Diagrama de código](#92-diagrama-de-código)
+- [10. Protótipo de telas](#10-protótipo-de-telas)
+- [11. Diagrama de navegação de telas](#11-diagrama-de-navegação-de-telas)
+- [12. Pilha tecnológica](#12-pilha-tecnológica)
+- [13. Requisitos de sistemas](#13-requisitos-de-sistemas)
+  - [13.1. Requisitos do cliente](#131-requisitos-do-cliente)
+  - [13.2.2 Requisitos do server side](#1322-requisitos-do-server-side)
+- [14. Considerações sobre segurança](#14-considerações-sobre-segurança)
+  - [14.1. Lado cliente](#141-lado-cliente)
+  - [14.2. Lado servidor](#142-lado-servidor)
+- [15. Manutenção e instalação](#15-manutenção-e-instalação)
+  - [15.1. Instalado no servidor](#151-instalado-no-servidor)
+  - [15.2. Manutenção](#152-manutenção)
+  - [15.3. Novas funcionalidades](#153-novas-funcionalidades)
+- [16. Treinamento](#16-treinamento)
+  - [16.1. Usuário](#161-usuário)
+  - [16.2. Admin](#162-admin)
+- [17. Glossário](#17-glossário)
+- [18. Script SQL](#18-script-sql)
+  - [18.1. Comandos CREATE TABLE:](#181-comandos-create-table)
+  - [18.2. Comandos INSERT gerando dados fictícios](#182-comandos-insert-gerando-dados-fictícios)
 
 # 1. Descrição do sistema
 
@@ -83,6 +90,48 @@ O projeto a seguir apresenta um sistema desenvolvido para um petshop. A empresa 
 23. O sistema deve gerar relatórios sobre atendimentos realizados por veterinário.
 24. Clientes podem pagar pelos serviços da clínica através de cartão ou dinheiro.
 25. A clínica deve manter um histórico de pagamentos e faturamento dos clientes.
+
+## 2.1. Requisitos
+
+### Requisitos Funcionas e Não funcionalidades
+
+| **Tipo de Requisito**         | **Descrição**                                                                                        |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------- |
+| **Requisitos Funcionais**     |                                                                                                      |
+| RF01                          | A clínica deve atender apenas gatos e cachorros.                                                     |
+| RF02                          | Clientes devem realizar o cadastro pessoal e dos animais.                                            |
+| RF03                          | Clientes devem informar as condições nas quais os animais chegam à clínica.                          |
+| RF04                          | Clientes devem informar o tipo de ração que o animal consome.                                        |
+| RF05                          | Clientes devem informar hábitos específicos do animal.                                               |
+| RF06                          | O sistema deve permitir o atendimento de cada animal por múltiplos veterinários.                     |
+| RF07                          | O sistema deve gerenciar a agenda de atendimentos diários.                                           |
+| RF08                          | O sistema deve registrar uma ficha e um prontuário para cada animal atendido.                        |
+| RF09                          | O sistema deve permitir que donos agendem horários futuros.                                          |
+| RF10                          | O atendimento deve gerar uma receita para o animal.                                                  |
+| RF11                          | O cliente deve ser recebido e atendido por um atendente ao chegar.                                   |
+| RF12                          | O atendente deve verificar se há disponibilidade na agenda com um veterinário.                       |
+| RF13                          | O atendente deve colocar o cliente e o animal na fila de espera, se necessário.                      |
+| RF14                          | O atendente deve acompanhar o cliente e o animal até o veterinário.                                  |
+| RF15                          | O veterinário deve realizar uma entrevista com o dono do animal e registrar em formulário.           |
+| RF16                          | O veterinário deve examinar o animal e anotar observações no prontuário.                             |
+| RF17                          | O sistema deve permitir a emissão de receita para o animal, quando necessário.                       |
+| RF18                          | O sistema deve permitir a compra de brinquedos pelos clientes.                                       |
+| RF19                          | O sistema deve permitir a consulta a prontuários antigos.                                            |
+| RF20                          | O sistema deve permitir o agendamento de retornos para acompanhamento dos animais.                   |
+| RF21                          | O sistema deve enviar lembretes automáticos para donos sobre retornos agendados.                     |
+| RF22                          | O sistema deve gerar relatórios de atendimentos realizados por veterinário.                          |
+| RF23                          | O sistema deve registrar pagamentos realizados por cartão ou dinheiro.                               |
+| RF24                          | O sistema deve manter um histórico de pagamentos e faturamento dos clientes.                         |
+| **Requisitos Não Funcionais** |                                                                                                      |
+| RNF01                         | O sistema deve ser seguro para proteger dados dos clientes e dos animais.                            |
+| RNF02                         | O sistema deve ter alta disponibilidade para garantir o funcionamento durante o horário da clínica.  |
+| RNF03                         | O sistema deve ser fácil de usar, permitindo uma experiência intuitiva para clientes e funcionários. |
+| RNF04                         | O sistema deve enviar lembretes automáticos no prazo definido para retornos.                         |
+| RNF05                         | O sistema deve ser escalável para suportar o aumento de clientes e animais.                          |
+| RNF06                         | O sistema deve permitir acessibilidade em diferentes dispositivos, como desktops e tablets.          |
+| RNF07                         | O sistema deve garantir a integridade e consistência dos dados.                                      |
+| RNF08                         | O sistema deve ter um tempo de resposta rápido para as operações principais.                         |
+| RNF09                         | O sistema deve seguir as regulamentações de segurança e privacidade de dados.                        |
 
 # 3. Visão geral do sistema.
 
@@ -362,14 +411,151 @@ classDiagram
 
 <img src="diagrama_de_implantacao.jpg">
 
-# 9. Protótipo de telas
+# 9. Diagramas C4
+
+## 9.1. Diagrama de contexto
+
+```mermaid
+graph TD
+    Cliente -->|Realiza cadastro e agenda| SistemaClinicaVeterinaria
+    SistemaClinicaVeterinaria -->|Envio de lembretes| Cliente
+    SistemaClinicaVeterinaria -->|Relatórios e prontuários| Veterinario
+    Veterinario -->|Atende animal e registra prontuário| SistemaClinicaVeterinaria
+    Atendente -->|Gereciamento de agenda e fila de espera| SistemaClinicaVeterinaria
+    SistemaClinicaVeterinaria -->|Histórico de pagamentos| Financeiro
+    SistemaClinicaVeterinaria -->|Consulta e emissão de receita| Cliente
+    Cliente -->|Realiza pagamento| SistemaClinicaVeterinaria
+```
+
+## 9.2. Diagrama de container
+
+```mermaid
+graph TD
+    subgraph SistemaClinicaVeterinaria
+        AgendaSistema
+        CadastroSistema
+        ProntuarioSistema
+        PagamentoSistema
+        RelatorioSistema
+    end
+
+    Cliente -->|Acessa e agenda atendimento| AgendaSistema
+    Cliente -->|Faz cadastro| CadastroSistema
+    Veterinario -->|Consulta e registra| ProntuarioSistema
+    Atendente -->|Gerencia fila de espera| AgendaSistema
+    Cliente -->|Realiza pagamento| PagamentoSistema
+    ProntuarioSistema -->|Gera relatórios de atendimentos| RelatorioSistema
+    PagamentoSistema -->|Histórico de pagamentos| Financeiro
+```
+
+## 9.2. Diagrama de componente
+
+```mermaid
+graph TD
+    subgraph CadastroSistema
+        CadastroCliente
+        CadastroAnimal
+    end
+
+    subgraph AgendaSistema
+        AgendamentoConsulta
+        FilaDeEspera
+        NotificacaoAutomatica
+    end
+
+    subgraph ProntuarioSistema
+        FichaAtendimento
+        FormularioEntrevista
+        RegistroProntuario
+        EmissaoReceita
+    end
+
+    subgraph PagamentoSistema
+        RegistroPagamento
+        HistoricoFinanceiro
+    end
+
+    CadastroCliente --> CadastroAnimal
+    CadastroAnimal --> AgendamentoConsulta
+    AgendamentoConsulta --> FilaDeEspera
+    FilaDeEspera --> NotificacaoAutomatica
+    RegistroProntuario --> EmissaoReceita
+    ProntuarioSistema --> RelatorioSistema
+    RegistroPagamento --> HistoricoFinanceiro
+```
+
+## 9.2. Diagrama de código
+
+```mermaid
+classDiagram
+    class Cliente {
+        id: Int
+        nome: String
+        endereco: String
+        telefone: String
+        email: String
+        animais: List<Animal>
+    }
+
+    class Animal {
+        id: Int
+        nome: String
+        idade: Int
+        tipo: String
+        habitos: String
+        tipoRacao: String
+        ficha: Ficha
+        prontuario: Prontuario
+    }
+
+    class Veterinario {
+        id: Int
+        nome: String
+        especialidade: String
+    }
+
+    class Ficha {
+        id: Int
+        detalhes: String
+        data: Date
+    }
+
+    class Prontuario {
+        id: Int
+        observacoes: String
+        data: Date
+    }
+
+    class Agendamento {
+        id: Int
+        data: Date
+        hora: Time
+        veterinario: Veterinario
+    }
+
+    class Pagamento {
+        id: Int
+        data: Date
+        valor: Float
+        forma: String
+    }
+
+    Cliente --> Animal
+    Animal --> Ficha
+    Animal --> Prontuario
+    Prontuario --> Agendamento
+    Agendamento --> Veterinario
+    Cliente --> Pagamento
+```
+
+# 10. Protótipo de telas
 
 <img src="print1.png">
 <img src="print2.png">
 <img src="print3.png">
 <img src="print4.png">
 
-# 10. Diagrama de navegação de telas
+# 11. Diagrama de navegação de telas
 
 ```mermaid
 graph TD
@@ -406,7 +592,7 @@ graph TD
     Loja --> CompraBrinquedos[Compra de Brinquedos]
 ```
 
-# 11. Pilha tecnológica
+# 12. Pilha tecnológica
 
 ```mermaid
 graph TD
@@ -446,9 +632,9 @@ graph TD
     D3 --> D4
 ```
 
-# 12. Requisitos de sistemas
+# 13. Requisitos de sistemas
 
-## 12.1. Requisitos do cliente
+## 13.1. Requisitos do cliente
 
 Para garantir o correto funcionamento do sistema na parte do cliente, os seguintes requisitos são necessários:
 
@@ -474,7 +660,7 @@ Software Adicional:
 JavaScript Ativado: Necessário para o funcionamento dinâmico das páginas.
 Cookies Habilitados: Utilizados para manter sessões de usuários e personalizar a experiência.
 
-## 12.2.2 Requisitos do server side
+## 13.2.2 Requisitos do server side
 
 O ambiente de servidor deve atender aos seguintes requisitos para hospedar e operar o sistema de forma eficiente:
 
@@ -502,9 +688,9 @@ JWT/OAuth para gerenciamento de autenticação e autorização
 Serviços de Cache:
 Redis para otimização de desempenho e armazenamento de sessões
 
-# 13. Considerações sobre segurança
+# 14. Considerações sobre segurança
 
-## 13.1. Lado cliente
+## 14.1. Lado cliente
 
 Para garantir a segurança dos dados e a integridade das operações no lado cliente, as seguintes medidas são implementadas:
 
@@ -525,7 +711,7 @@ Armazenamento Seguro de Dados:
 
 Criptografia de Dados Sensíveis: Informações sensíveis armazenadas no navegador, como tokens de sessão, são criptografadas para evitar acessos não autorizados.
 
-## 13.2. Lado servidor
+## 14.2. Lado servidor
 
 No lado do servidor, as seguintes práticas e políticas de segurança são adotadas:
 
@@ -550,11 +736,11 @@ Configuração de firewall para permitir apenas o tráfego necessário e bloquea
 Proteção contra Ataques DDoS:
 Implementação de medidas para mitigar ataques de negação de serviço distribuída (DDoS), garantindo a disponibilidade do sistema.
 
-# 14. Manutenção e instalação
+# 15. Manutenção e instalação
 
-## 14.1. Instalado no servidor
+## 15.1. Instalado no servidor
 
-## 14.2. Manutenção
+## 15.2. Manutenção
 
 A manutenção do sistema é essencial para garantir seu funcionamento contínuo, seguro e eficiente. As atividades de manutenção incluem:
 
@@ -575,7 +761,7 @@ Manutenção e atualização da documentação técnica e de usuário para refle
 Suporte Técnico:
 Disponibilização de canais de suporte para atender dúvidas e solucionar problemas enfrentados pelos usuários.
 
-## 14.3. Novas funcionalidades
+## 15.3. Novas funcionalidades
 
 A adição de novas funcionalidades ao sistema deve seguir um processo estruturado para garantir sua viabilidade e alinhamento com os objetivos da clínica. As etapas para a implementação de novas funcionalidades incluem:
 
@@ -599,9 +785,9 @@ Monitoramento e Feedback:
 Avaliação de Uso: Monitoramento do uso da nova funcionalidade para identificar possíveis melhorias.
 Coleta de Feedback: Recebimento de feedback dos usuários para ajustes e refinamentos futuros.
 
-# 15. Treinamento
+# 16. Treinamento
 
-## 15.1. Usuário
+## 16.1. Usuário
 
 Para garantir que os usuários finais (clientes e funcionários da clínica) possam utilizar o sistema de forma eficiente e sem dificuldades, serão fornecidos os seguintes materiais e métodos de treinamento:
 
@@ -621,7 +807,7 @@ Feedback e Melhorias:
 Formulários de Feedback: Coleta de opiniões dos usuários sobre a experiência de uso e sugestões de melhorias.
 Atualizações Baseadas no Feedback: Implementação de melhorias contínuas com base nas sugestões recebidas.
 
-## 15.2. Admin
+## 16.2. Admin
 
 Os administradores do sistema, responsáveis pela gestão e manutenção da plataforma, receberão um treinamento mais aprofundado para garantir o pleno domínio das ferramentas e procedimentos necessários. O treinamento incluirá:
 
@@ -641,11 +827,11 @@ Suporte Continuado e Atualizações:
 Acesso a Suporte Técnico Especializado: Disponibilidade de suporte para resolver dúvidas técnicas e problemas complexos.
 Atualizações Regulares de Conhecimento: Informações sobre novas funcionalidades, atualizações de software e mudanças na infraestrutura.
 
-# 16. Glossário
+# 17. Glossário
 
-# 17. Script SQL
+# 18. Script SQL
 
-## 17.1. Comandos CREATE TABLE:
+## 18.1. Comandos CREATE TABLE:
 
 ```SQL
 -- Tabela de Clientes
@@ -735,7 +921,7 @@ CREATE TABLE Veterinario_Animal (
 );
 ```
 
-## 17.2. Comandos INSERT gerando dados fictícios
+## 18.2. Comandos INSERT gerando dados fictícios
 
 ```SQL
   -- Inserindo Clientes
