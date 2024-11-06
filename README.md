@@ -2,7 +2,10 @@
 
 Repositório destinado aos estudos relacionados à disciplina de Engenharia de Software na UNEMAT
 
+# Sumário
+
 - [vitor_linsbinski_engsw](#vitor_linsbinski_engsw)
+- [Sumário](#sumário)
 - [1. Descrição do sistema](#1-descrição-do-sistema)
 - [2. Problema e descrição do negócio](#2-problema-e-descrição-do-negócio)
   - [2.1. Requisitos](#21-requisitos)
@@ -42,26 +45,85 @@ Repositório destinado aos estudos relacionados à disciplina de Engenharia de S
 - [11. Diagrama de navegação de telas](#11-diagrama-de-navegação-de-telas)
 - [12. Pilha tecnológica](#12-pilha-tecnológica)
 - [13. Requisitos de sistemas](#13-requisitos-de-sistemas)
-  - [13.1. Requisitos do cliente](#131-requisitos-do-cliente)
-  - [13.2.2 Requisitos do server side](#1322-requisitos-do-server-side)
+  - [13.1. Requisitos do Cliente](#131-requisitos-do-cliente)
+    - [1. Navegador Web Compatível:](#1-navegador-web-compatível)
+    - [2. Conexão à Internet:](#2-conexão-à-internet)
+    - [3. Dispositivos Suportados:](#3-dispositivos-suportados)
+      - [Desktop:](#desktop)
+      - [Dispositivos Móveis:](#dispositivos-móveis)
+    - [4. Software Adicional:](#4-software-adicional)
+  - [13.2.2 Requisitos do Server Side](#1322-requisitos-do-server-side)
+    - [1. Hardware da Máquina Virtual](#1-hardware-da-máquina-virtual)
+    - [2. Software e Tecnologias](#2-software-e-tecnologias)
+      - [Sistema Operacional:](#sistema-operacional)
+      - [Servidor Web:](#servidor-web)
+      - [Banco de Dados:](#banco-de-dados)
+      - [Ambiente de Execução:](#ambiente-de-execução)
+      - [Gerenciamento de Dependências:](#gerenciamento-de-dependências)
+      - [Ferramentas de Containerização:](#ferramentas-de-containerização)
+      - [Serviços de Email:](#serviços-de-email)
+      - [Segurança e Autenticação:](#segurança-e-autenticação)
+      - [Serviços de Cache:](#serviços-de-cache)
 - [14. Considerações sobre segurança](#14-considerações-sobre-segurança)
-  - [14.1. Lado cliente](#141-lado-cliente)
-  - [14.2. Lado servidor](#142-lado-servidor)
+  - [14.1. Lado Cliente](#141-lado-cliente)
+    - [1. Regras de Senha](#1-regras-de-senha)
+    - [2. Proteção contra XSS e CSRF](#2-proteção-contra-xss-e-csrf)
+    - [3. Comunicação Segura](#3-comunicação-segura)
+    - [4. Armazenamento Seguro de Dados](#4-armazenamento-seguro-de-dados)
+  - [14.2. Lado Servidor](#142-lado-servidor)
+    - [1. Sistema Operacional Seguro](#1-sistema-operacional-seguro)
+    - [2. Política de Backups](#2-política-de-backups)
+    - [3. Gerenciamento de Acesso](#3-gerenciamento-de-acesso)
+    - [4. Proteção de Dados](#4-proteção-de-dados)
+    - [5. Monitoramento e Logs](#5-monitoramento-e-logs)
+    - [6. Atualizações e Patches](#6-atualizações-e-patches)
+    - [7. Firewall e Segurança de Rede](#7-firewall-e-segurança-de-rede)
+    - [8. Proteção contra Ataques DDoS](#8-proteção-contra-ataques-ddos)
 - [15. Manutenção e instalação](#15-manutenção-e-instalação)
   - [15.1. Instalado no servidor](#151-instalado-no-servidor)
   - [15.2. Manutenção](#152-manutenção)
-  - [15.3. Novas funcionalidades](#153-novas-funcionalidades)
+    - [1. Atualizações de Software](#1-atualizações-de-software)
+    - [2. Monitoramento de Performance](#2-monitoramento-de-performance)
+    - [3. Gerenciamento de Backups](#3-gerenciamento-de-backups)
+    - [4. Correção de Bugs](#4-correção-de-bugs)
+    - [5. Otimização de Banco de Dados](#5-otimização-de-banco-de-dados)
+    - [6. Segurança Contínua](#6-segurança-contínua)
+    - [7. Documentação Atualizada](#7-documentação-atualizada)
+    - [8. Suporte Técnico](#8-suporte-técnico)
+  - [15.3. Novas Funcionalidades](#153-novas-funcionalidades)
+    - [1. Formalização do Pedido](#1-formalização-do-pedido)
+    - [2. Feedback do Cliente](#2-feedback-do-cliente)
+    - [3. Análise de Viabilidade](#3-análise-de-viabilidade)
+      - [Critérios de Avaliação:](#critérios-de-avaliação)
+    - [4. Planejamento e Desenvolvimento](#4-planejamento-e-desenvolvimento)
+    - [5. Implantação e Treinamento](#5-implantação-e-treinamento)
+    - [6. Monitoramento e Feedback](#6-monitoramento-e-feedback)
 - [16. Treinamento](#16-treinamento)
   - [16.1. Usuário](#161-usuário)
+  - [16.1. Treinamento de Usuários](#161-treinamento-de-usuários)
+    - [Vídeos Tutoriais na Web](#vídeos-tutoriais-na-web)
+    - [Manuais de Usuário](#manuais-de-usuário)
+    - [Webinars e Sessões de Treinamento ao Vivo](#webinars-e-sessões-de-treinamento-ao-vivo)
+    - [Suporte Online](#suporte-online)
+    - [Feedback e Melhorias](#feedback-e-melhorias)
   - [16.2. Admin](#162-admin)
+    - [Sessões Presenciais e Online](#sessões-presenciais-e-online)
+    - [Documentação Técnica Detalhada](#documentação-técnica-detalhada)
+    - [Acesso a Ferramentas de Monitoramento e Gestão](#acesso-a-ferramentas-de-monitoramento-e-gestão)
+    - [Políticas de Segurança e Compliance](#políticas-de-segurança-e-compliance)
+    - [Suporte Continuado e Atualizações](#suporte-continuado-e-atualizações)
 - [17. Glossário](#17-glossário)
 - [18. Script SQL](#18-script-sql)
   - [18.1. Comandos CREATE TABLE:](#181-comandos-create-table)
   - [18.2. Comandos INSERT gerando dados fictícios](#182-comandos-insert-gerando-dados-fictícios)
 
+[Início](#sumário)
+
 # 1. Descrição do sistema
 
 O projeto a seguir apresenta um sistema desenvolvido para um petshop. A empresa é considerada micro e iniciou as atividades recentemente. Ao possuir serviços exclusivos, os sistemas presentes no mercado não se enquadra, desta forma, os proprietários decidiram desenvolver uma solução própria. Esta solução é detelhada a seguir:
+
+[Início](#sumário)
 
 # 2. Problema e descrição do negócio
 
@@ -133,6 +195,8 @@ O projeto a seguir apresenta um sistema desenvolvido para um petshop. A empresa 
 | RNF08                         | O sistema deve ter um tempo de resposta rápido para as operações principais.                         |
 | RNF09                         | O sistema deve seguir as regulamentações de segurança e privacidade de dados.                        |
 
+[Início](#sumário)
+
 # 3. Visão geral do sistema.
 
 O sistema para a clínica veterinária tem como objetivo principal facilitar a gestão de atendimentos e serviços para animais de estimação, especificamente cães e gatos. Ele proporciona um ambiente digital onde clientes podem cadastrar seus animais, agendar consultas e acompanhar o histórico médico dos pets. Por outro lado, a equipe da clínica, composta por atendentes e veterinários, pode gerenciar o fluxo de atendimento, realizar avaliações, registrar prontuários e gerar receitas médicas.
@@ -140,6 +204,8 @@ O sistema para a clínica veterinária tem como objetivo principal facilitar a g
 A plataforma é projetada para atender às necessidades de uma clínica de pequeno porte, automatizando tarefas administrativas e médicas, como a manutenção de agendas, o gerenciamento de filas de espera, a consulta de prontuários antigos e o envio de lembretes automáticos para os clientes. Além disso, o sistema oferece funcionalidades para a compra de produtos e serviços, bem como para o registro e acompanhamento de pagamentos, visando proporcionar uma experiência completa tanto para os profissionais da clínica quanto para os clientes.
 
 Essa solução abrange a integração de diversas áreas, como administração, saúde animal e comércio, permitindo à clínica operar de forma mais eficiente e com maior qualidade no atendimento aos seus clientes.
+
+[Início](#sumário)
 
 # 4. Diagrama ER
 
@@ -210,6 +276,8 @@ erDiagram
     CLIENTE ||--o{ ATENDENTE : "atendido por"
 
 ```
+
+[Início](#sumário)
 
 # 5. Diagrama de classes
 
@@ -286,6 +354,8 @@ classDiagram
     Pagamento "0..*" --> "1" Cliente : pertence
     Compra "0..*" --> "1" Cliente : pertence
 ```
+
+[Início](#sumário)
 
 # 6. Casos de uso
 
@@ -403,13 +473,19 @@ classDiagram
 - **Quero** manter um histórico de pagamentos e faturamento dos clientes,
 - **Para que** a clínica possa ter controle financeiro e histórico de serviços prestados.
 
+[Início](#sumário)
+
 # 7. Diagrama de componentes
 
 <img src="diagrama_de_componentes.jpg">
 
+[Início](#sumário)
+
 # 8. Diagrama de implantação
 
 <img src="diagrama_de_implantacao.jpg">
+
+[Início](#sumário)
 
 # 9. Diagramas C4
 
@@ -548,12 +624,16 @@ classDiagram
     Cliente --> Pagamento
 ```
 
+[Início](#sumário)
+
 # 10. Protótipo de telas
 
 <img src="print1.png">
 <img src="print2.png">
 <img src="print3.png">
 <img src="print4.png">
+
+[Início](#sumário)
 
 # 11. Diagrama de navegação de telas
 
@@ -591,6 +671,8 @@ graph TD
 
     Loja --> CompraBrinquedos[Compra de Brinquedos]
 ```
+
+[Início](#sumário)
 
 # 12. Pilha tecnológica
 
@@ -632,109 +714,165 @@ graph TD
     D3 --> D4
 ```
 
+[Início](#sumário)
+
 # 13. Requisitos de sistemas
 
-## 13.1. Requisitos do cliente
+## 13.1. Requisitos do Cliente
 
 Para garantir o correto funcionamento do sistema na parte do cliente, os seguintes requisitos são necessários:
 
-Navegador Web Compatível: O sistema é acessível através de navegadores modernos que suportem as tecnologias HTML5, CSS3 e JavaScript. Recomenda-se o uso das versões mais recentes dos seguintes navegadores:
+### 1. Navegador Web Compatível:
 
-Google Chrome (versão 90 ou superior)
-Mozilla Firefox (versão 88 ou superior)
-Microsoft Edge (versão 90 ou superior)
-Safari (versão 14 ou superior)
-Conexão à Internet: É necessário ter uma conexão estável à internet para acessar o sistema, realizar cadastros, agendar atendimentos e utilizar todas as funcionalidades disponíveis.
+O sistema é acessível através de navegadores modernos que suportem as tecnologias HTML5, CSS3 e JavaScript. Recomenda-se o uso das versões mais recentes dos seguintes navegadores:
 
-Dispositivos Suportados: O sistema é responsivo e pode ser acessado tanto em desktops quanto em dispositivos móveis, como smartphones e tablets. As seguintes especificações mínimas são recomendadas:
+- **Google Chrome** (versão 90 ou superior)
+- **Mozilla Firefox** (versão 88 ou superior)
+- **Microsoft Edge** (versão 90 ou superior)
+- **Safari** (versão 14 ou superior)
 
-Desktop:
-Processador: Intel Core i3 ou equivalente
-Memória RAM: 4 GB
-Resolução de Tela: 1366x768 pixels
-Dispositivos Móveis:
-Sistema Operacional: Android 8.0 ou superior, iOS 12 ou superior
-Navegadores Compatíveis: Versões móveis dos navegadores mencionados acima
-Software Adicional:
+### 2. Conexão à Internet:
 
-JavaScript Ativado: Necessário para o funcionamento dinâmico das páginas.
-Cookies Habilitados: Utilizados para manter sessões de usuários e personalizar a experiência.
+É necessário ter uma conexão estável à internet para acessar o sistema, realizar cadastros, agendar atendimentos e utilizar todas as funcionalidades disponíveis.
 
-## 13.2.2 Requisitos do server side
+### 3. Dispositivos Suportados:
+
+O sistema é responsivo e pode ser acessado tanto em desktops quanto em dispositivos móveis, como smartphones e tablets. As seguintes especificações mínimas são recomendadas:
+
+#### Desktop:
+
+- **Processador**: Intel Core i3 ou equivalente
+- **Memória RAM**: 4 GB
+- **Resolução de Tela**: 1366x768 pixels
+
+#### Dispositivos Móveis:
+
+- **Sistema Operacional**: Android 8.0 ou superior, iOS 12 ou superior
+- **Navegadores Compatíveis**: Versões móveis dos navegadores mencionados acima
+
+### 4. Software Adicional:
+
+- **JavaScript Ativado**: Necessário para o funcionamento dinâmico das páginas.
+- **Cookies Habilitados**: Utilizados para manter sessões de usuários e personalizar a experiência.
+
+## 13.2.2 Requisitos do Server Side
 
 O ambiente de servidor deve atender aos seguintes requisitos para hospedar e operar o sistema de forma eficiente:
 
-Hardware da Máquina Virtual
-Memória RAM: Mínimo de 2 GB
-Processador: 2 vCPUs
-Armazenamento: 20 GB de disco SSD
-Largura de Banda: 1 TB de transferência mensal
-Software e Tecnologias
-Sistema Operacional:
-Linux (preferencialmente distribuições como Ubuntu 20.04 LTS ou Debian 10)
-Servidor Web:
-Apache (versão 2.4 ou superior)
-MySQL (versão 5.7 ou superior)
-Ambiente de Execução:
-Node.js (versão 14 ou superior) para a aplicação backend
-Gerenciamento de Dependências:
-npm (Node Package Manager) ou yarn
-Ferramentas de Containerização:
-Docker para facilitar a implantação e escalabilidade da aplicação
-Serviços de Email:
-SMTP Server configurado para envio de notificações e lembretes automáticos
-Segurança e Autenticação:
-JWT/OAuth para gerenciamento de autenticação e autorização
-Serviços de Cache:
-Redis para otimização de desempenho e armazenamento de sessões
+### 1. Hardware da Máquina Virtual
+
+- **Memória RAM**: Mínimo de 2 GB
+- **Processador**: 2 vCPUs
+- **Armazenamento**: 20 GB de disco SSD
+- **Largura de Banda**: 1 TB de transferência mensal
+
+### 2. Software e Tecnologias
+
+#### Sistema Operacional:
+
+- **Linux** (preferencialmente distribuições como **Ubuntu 20.04 LTS** ou **Debian 10**)
+
+#### Servidor Web:
+
+- **Apache** (versão 2.4 ou superior)
+
+#### Banco de Dados:
+
+- **MySQL** (versão 5.7 ou superior)
+
+#### Ambiente de Execução:
+
+- **Node.js** (versão 14 ou superior) para a aplicação backend
+
+#### Gerenciamento de Dependências:
+
+- **npm** (Node Package Manager) ou **yarn**
+
+#### Ferramentas de Containerização:
+
+- **Docker** para facilitar a implantação e escalabilidade da aplicação
+
+#### Serviços de Email:
+
+- **SMTP Server** configurado para envio de notificações e lembretes automáticos
+
+#### Segurança e Autenticação:
+
+- **JWT/OAuth** para gerenciamento de autenticação e autorização
+
+#### Serviços de Cache:
+
+- **Redis** para otimização de desempenho e armazenamento de sessões
+
+[Início](#sumário)
 
 # 14. Considerações sobre segurança
 
-## 14.1. Lado cliente
+## 14.1. Lado Cliente
 
 Para garantir a segurança dos dados e a integridade das operações no lado cliente, as seguintes medidas são implementadas:
 
-Regras de Senha:
+### 1. Regras de Senha
 
-Complexidade: Senhas devem conter no mínimo 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.
-Validação de Captcha: Implementação de Captcha nos formulários de cadastro e login para prevenir ataques de força bruta e bots automatizados.
-Autenticação de Dois Fatores (2FA): Opção para os usuários habilitarem a 2FA, adicionando uma camada extra de segurança ao processo de login.
-Recuperação de Senha: Processo seguro de recuperação de senha através de links temporários enviados para o email registrado, garantindo que apenas o proprietário do email possa redefinir a senha.
-Proteção contra XSS e CSRF:
+- **Complexidade**: Senhas devem conter no mínimo 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.
+- **Validação de Captcha**: Implementação de Captcha nos formulários de cadastro e login para prevenir ataques de força bruta e bots automatizados.
+- **Autenticação de Dois Fatores (2FA)**: Opção para os usuários habilitarem a 2FA, adicionando uma camada extra de segurança ao processo de login.
+- **Recuperação de Senha**: Processo seguro de recuperação de senha através de links temporários enviados para o email registrado, garantindo que apenas o proprietário do email possa redefinir a senha.
 
-Sanitização de Inputs: Todos os dados inseridos pelos usuários são sanitizados para prevenir ataques de Cross-Site Scripting (XSS).
-Tokens CSRF: Implementação de tokens CSRF em formulários para prevenir ataques de Cross-Site Request Forgery (CSRF).
-Comunicação Segura:
+### 2. Proteção contra XSS e CSRF
 
-HTTPS: Todas as comunicações entre o cliente e o servidor são criptografadas utilizando SSL/TLS para proteger os dados em trânsito.
-Armazenamento Seguro de Dados:
+- **Sanitização de Inputs**: Todos os dados inseridos pelos usuários são sanitizados para prevenir ataques de **Cross-Site Scripting (XSS)**.
+- **Tokens CSRF**: Implementação de tokens CSRF em formulários para prevenir ataques de **Cross-Site Request Forgery (CSRF)**.
 
-Criptografia de Dados Sensíveis: Informações sensíveis armazenadas no navegador, como tokens de sessão, são criptografadas para evitar acessos não autorizados.
+### 3. Comunicação Segura
 
-## 14.2. Lado servidor
+- **HTTPS**: Todas as comunicações entre o cliente e o servidor são criptografadas utilizando **SSL/TLS** para proteger os dados em trânsito.
+
+### 4. Armazenamento Seguro de Dados
+
+- **Criptografia de Dados Sensíveis**: Informações sensíveis armazenadas no navegador, como tokens de sessão, são criptografadas para evitar acessos não autorizados.
+
+## 14.2. Lado Servidor
 
 No lado do servidor, as seguintes práticas e políticas de segurança são adotadas:
 
-Sistema Operacional Seguro:
-Utilização de Linux com atualizações regulares para corrigir vulnerabilidades.
-Política de Backups:
-Backup Completo: Realizado uma vez por mês.
-Backup Completo Quinzenal: Realizado a cada 15 dias.
-Backup Incremental Diário: Realizado no final de cada dia para garantir a recuperação de dados atualizados.
-Gerenciamento de Acesso:
-Princípio do Menor Privilégio: Administradores e usuários do sistema possuem apenas as permissões necessárias para desempenhar suas funções.
-Autenticação e Autorização: Utilização de JWT/OAuth para garantir que apenas usuários autenticados e autorizados tenham acesso a determinadas funcionalidades e dados.
-Proteção de Dados:
-Criptografia em Descanso: Dados sensíveis armazenados no banco de dados são criptografados.
-Política de Não Acesso de Admin: Administradores do sistema não têm acesso direto aos dados dos usuários, garantindo a privacidade e confidencialidade das informações.
-Monitoramento e Logs:
-Logs de Acesso e Erros: Monitoramento contínuo dos logs para identificar e responder a atividades suspeitas ou anômalas.
-Atualizações e Patches:
-Aplicação regular de atualizações de segurança e patches para todos os softwares e dependências utilizados no servidor.
-Firewall e Segurança de Rede:
-Configuração de firewall para permitir apenas o tráfego necessário e bloquear tentativas de acesso não autorizadas.
-Proteção contra Ataques DDoS:
-Implementação de medidas para mitigar ataques de negação de serviço distribuída (DDoS), garantindo a disponibilidade do sistema.
+### 1. Sistema Operacional Seguro
+
+- Utilização de **Linux** com atualizações regulares para corrigir vulnerabilidades.
+
+### 2. Política de Backups
+
+- **Backup Completo**: Realizado uma vez por mês.
+- **Backup Completo Quinzenal**: Realizado a cada 15 dias.
+- **Backup Incremental Diário**: Realizado no final de cada dia para garantir a recuperação de dados atualizados.
+
+### 3. Gerenciamento de Acesso
+
+- **Princípio do Menor Privilégio**: Administradores e usuários do sistema possuem apenas as permissões necessárias para desempenhar suas funções.
+- **Autenticação e Autorização**: Utilização de **JWT/OAuth** para garantir que apenas usuários autenticados e autorizados tenham acesso a determinadas funcionalidades e dados.
+
+### 4. Proteção de Dados
+
+- **Criptografia em Descanso**: Dados sensíveis armazenados no banco de dados são criptografados.
+- **Política de Não Acesso de Admin**: Administradores do sistema não têm acesso direto aos dados dos usuários, garantindo a privacidade e confidencialidade das informações.
+
+### 5. Monitoramento e Logs
+
+- **Logs de Acesso e Erros**: Monitoramento contínuo dos logs para identificar e responder a atividades suspeitas ou anômalas.
+
+### 6. Atualizações e Patches
+
+- Aplicação regular de **atualizações de segurança** e patches para todos os softwares e dependências utilizados no servidor.
+
+### 7. Firewall e Segurança de Rede
+
+- **Configuração de firewall** para permitir apenas o tráfego necessário e bloquear tentativas de acesso não autorizadas.
+
+### 8. Proteção contra Ataques DDoS
+
+- Implementação de medidas para mitigar **ataques de negação de serviço distribuída (DDoS)**, garantindo a disponibilidade do sistema.
+
+[Início](#sumário)
 
 # 15. Manutenção e instalação
 
@@ -744,90 +882,143 @@ Implementação de medidas para mitigar ataques de negação de serviço distrib
 
 A manutenção do sistema é essencial para garantir seu funcionamento contínuo, seguro e eficiente. As atividades de manutenção incluem:
 
-Atualizações de Software:
-Aplicação regular de atualizações de segurança para o sistema operacional, servidores web, banco de dados e dependências da aplicação.
-Monitoramento de Performance:
-Utilização de ferramentas de monitoramento para acompanhar a performance do servidor, identificando e resolvendo gargalos ou problemas de desempenho.
-Gerenciamento de Backups:
-Verificação periódica dos backups para garantir que estão sendo realizados corretamente e que os dados podem ser restaurados quando necessário.
-Correção de Bugs:
-Identificação e resolução de erros reportados pelos usuários ou detectados através de logs e monitoramento.
-Otimização de Banco de Dados:
-Realização de manutenções no banco de dados, como otimização de índices, limpeza de registros obsoletos e verificação de integridade.
-Segurança Contínua:
-Realização de auditorias de segurança regulares para identificar e mitigar novas vulnerabilidades.
-Documentação Atualizada:
-Manutenção e atualização da documentação técnica e de usuário para refletir as mudanças e atualizações no sistema.
-Suporte Técnico:
-Disponibilização de canais de suporte para atender dúvidas e solucionar problemas enfrentados pelos usuários.
+### 1. Atualizações de Software
 
-## 15.3. Novas funcionalidades
+- Aplicação regular de atualizações de segurança para o sistema operacional, servidores web, banco de dados e dependências da aplicação.
+
+### 2. Monitoramento de Performance
+
+- Utilização de ferramentas de monitoramento para acompanhar a performance do servidor, identificando e resolvendo gargalos ou problemas de desempenho.
+
+### 3. Gerenciamento de Backups
+
+- Verificação periódica dos backups para garantir que estão sendo realizados corretamente e que os dados podem ser restaurados quando necessário.
+
+### 4. Correção de Bugs
+
+- Identificação e resolução de erros reportados pelos usuários ou detectados através de logs e monitoramento.
+
+### 5. Otimização de Banco de Dados
+
+- Realização de manutenções no banco de dados, como otimização de índices, limpeza de registros obsoletos e verificação de integridade.
+
+### 6. Segurança Contínua
+
+- Realização de auditorias de segurança regulares para identificar e mitigar novas vulnerabilidades.
+
+### 7. Documentação Atualizada
+
+- Manutenção e atualização da documentação técnica e de usuário para refletir as mudanças e atualizações no sistema.
+
+### 8. Suporte Técnico
+
+- Disponibilização de canais de suporte para atender dúvidas e solucionar problemas enfrentados pelos usuários.
+
+## 15.3. Novas Funcionalidades
 
 A adição de novas funcionalidades ao sistema deve seguir um processo estruturado para garantir sua viabilidade e alinhamento com os objetivos da clínica. As etapas para a implementação de novas funcionalidades incluem:
 
-Formalização do Pedido:
-Requisição Formal: Todas as solicitações de novas funcionalidades devem ser documentadas formalmente, detalhando os requisitos e os benefícios esperados.
-Feedback do Cliente:
-Evitar Influências Estéticas: O cliente pode sugerir funcionalidades com base em preferências estéticas, mas o foco deve ser na usabilidade e na funcionalidade do sistema.
-Análise de Viabilidade:
-Critérios de Avaliação:
-Disponibilidade da Equipe: Verificar se a equipe de desenvolvimento possui tempo e recursos para implementar a nova funcionalidade.
-Viabilidade Econômica: Avaliar se a implementação é financeiramente viável, considerando custos e benefícios.
-Viabilidade Tecnológica: Determinar se a tecnologia necessária para implementar a funcionalidade está disponível e é compatível com o sistema existente.
-Planejamento e Desenvolvimento:
-Design da Funcionalidade: Criação de diagramas e protótipos para visualizar a nova funcionalidade.
-Desenvolvimento: Implementação da funcionalidade conforme as melhores práticas de desenvolvimento.
-Testes: Realização de testes rigorosos para garantir que a nova funcionalidade não introduza bugs ou vulnerabilidades no sistema.
-Implantação e Treinamento:
-Deploy: Implementação da nova funcionalidade no ambiente de produção.
-Treinamento: Atualização da documentação e treinamento dos usuários sobre a nova funcionalidade.
-Monitoramento e Feedback:
-Avaliação de Uso: Monitoramento do uso da nova funcionalidade para identificar possíveis melhorias.
-Coleta de Feedback: Recebimento de feedback dos usuários para ajustes e refinamentos futuros.
+### 1. Formalização do Pedido
+
+- **Requisição Formal**: Todas as solicitações de novas funcionalidades devem ser documentadas formalmente, detalhando os requisitos e os benefícios esperados.
+
+### 2. Feedback do Cliente
+
+- **Evitar Influências Estéticas**: O cliente pode sugerir funcionalidades com base em preferências estéticas, mas o foco deve ser na usabilidade e na funcionalidade do sistema.
+
+### 3. Análise de Viabilidade
+
+#### Critérios de Avaliação:
+
+- **Disponibilidade da Equipe**: Verificar se a equipe de desenvolvimento possui tempo e recursos para implementar a nova funcionalidade.
+- **Viabilidade Econômica**: Avaliar se a implementação é financeiramente viável, considerando custos e benefícios.
+- **Viabilidade Tecnológica**: Determinar se a tecnologia necessária para implementar a funcionalidade está disponível e é compatível com o sistema existente.
+
+### 4. Planejamento e Desenvolvimento
+
+- **Design da Funcionalidade**: Criação de diagramas e protótipos para visualizar a nova funcionalidade.
+- **Desenvolvimento**: Implementação da funcionalidade conforme as melhores práticas de desenvolvimento.
+- **Testes**: Realização de testes rigorosos para garantir que a nova funcionalidade não introduza bugs ou vulnerabilidades no sistema.
+
+### 5. Implantação e Treinamento
+
+- **Deploy**: Implementação da nova funcionalidade no ambiente de produção.
+- **Treinamento**: Atualização da documentação e treinamento dos usuários sobre a nova funcionalidade.
+
+### 6. Monitoramento e Feedback
+
+- **Avaliação de Uso**: Monitoramento do uso da nova funcionalidade para identificar possíveis melhorias.
+- **Coleta de Feedback**: Recebimento de feedback dos usuários para ajustes e refinamentos futuros.
+
+[Início](#sumário)
 
 # 16. Treinamento
 
 ## 16.1. Usuário
 
+## 16.1. Treinamento de Usuários
+
 Para garantir que os usuários finais (clientes e funcionários da clínica) possam utilizar o sistema de forma eficiente e sem dificuldades, serão fornecidos os seguintes materiais e métodos de treinamento:
 
-Vídeos Tutoriais na Web:
-Introdução ao Sistema: Vídeos explicando as funcionalidades básicas, como cadastro de clientes e animais, agendamento de atendimentos e consulta de prontuários.
-Uso Avançado: Tutoriais sobre funcionalidades mais complexas, como geração de relatórios, gestão de pagamentos e envio de lembretes automáticos.
-Manuais de Usuário:
-Documentação Detalhada: Guias escritos que descrevem passo a passo como realizar diversas operações dentro do sistema.
-FAQs: Seção de perguntas frequentes para resolver dúvidas comuns dos usuários.
-Webinars e Sessões de Treinamento ao Vivo:
-Sessões Interativas: Webinars periódicos onde os usuários podem aprender sobre novas funcionalidades e tirar dúvidas em tempo real.
-Gravações Disponíveis: Todas as sessões serão gravadas e disponibilizadas para consulta posterior.
-Suporte Online:
-Chat de Suporte: Disponibilização de um canal de chat para suporte imediato durante o horário de funcionamento.
-Sistema de Tickets: Plataforma para que os usuários possam reportar problemas ou solicitar ajuda de forma estruturada.
-Feedback e Melhorias:
-Formulários de Feedback: Coleta de opiniões dos usuários sobre a experiência de uso e sugestões de melhorias.
-Atualizações Baseadas no Feedback: Implementação de melhorias contínuas com base nas sugestões recebidas.
+### Vídeos Tutoriais na Web
+
+- **Introdução ao Sistema**: Vídeos explicando as funcionalidades básicas, como cadastro de clientes e animais, agendamento de atendimentos e consulta de prontuários.
+- **Uso Avançado**: Tutoriais sobre funcionalidades mais complexas, como geração de relatórios, gestão de pagamentos e envio de lembretes automáticos.
+
+### Manuais de Usuário
+
+- **Documentação Detalhada**: Guias escritos que descrevem passo a passo como realizar diversas operações dentro do sistema.
+- **FAQs**: Seção de perguntas frequentes para resolver dúvidas comuns dos usuários.
+
+### Webinars e Sessões de Treinamento ao Vivo
+
+- **Sessões Interativas**: Webinars periódicos onde os usuários podem aprender sobre novas funcionalidades e tirar dúvidas em tempo real.
+- **Gravações Disponíveis**: Todas as sessões serão gravadas e disponibilizadas para consulta posterior.
+
+### Suporte Online
+
+- **Chat de Suporte**: Disponibilização de um canal de chat para suporte imediato durante o horário de funcionamento.
+- **Sistema de Tickets**: Plataforma para que os usuários possam reportar problemas ou solicitar ajuda de forma estruturada.
+
+### Feedback e Melhorias
+
+- **Formulários de Feedback**: Coleta de opiniões dos usuários sobre a experiência de uso e sugestões de melhorias.
+- **Atualizações Baseadas no Feedback**: Implementação de melhorias contínuas com base nas sugestões recebidas.
 
 ## 16.2. Admin
 
 Os administradores do sistema, responsáveis pela gestão e manutenção da plataforma, receberão um treinamento mais aprofundado para garantir o pleno domínio das ferramentas e procedimentos necessários. O treinamento incluirá:
 
-Sessões Presenciais e Online:
-Workshops Práticos: Sessões hands-on onde os administradores aprendem a configurar, monitorar e gerenciar o sistema.
-Webinars Técnicos: Palestras online sobre temas avançados, como segurança, backup e recuperação de dados.
-Documentação Técnica Detalhada:
-Guias de Administração: Documentos que descrevem detalhadamente as tarefas administrativas, incluindo configuração de servidores, gerenciamento de usuários e monitoramento de performance.
-Procedimentos de Backup e Recuperação: Instruções passo a passo para realizar backups e restaurar dados em caso de necessidade.
-Acesso a Ferramentas de Monitoramento e Gestão:
-Dashboard de Administração: Interface centralizada para monitorar o estado do sistema, visualizar logs e gerenciar recursos.
-Ferramentas de Diagnóstico: Software e scripts para identificar e resolver problemas técnicos rapidamente.
-Políticas de Segurança e Compliance:
-Treinamento em Segurança da Informação: Educação sobre melhores práticas de segurança, incluindo gerenciamento de senhas, controle de acesso e proteção contra ameaças.
-Compliance com Regulamentações: Orientações sobre como garantir que o sistema esteja em conformidade com legislações e normas aplicáveis, como a LGPD (Lei Geral de Proteção de Dados).
-Suporte Continuado e Atualizações:
-Acesso a Suporte Técnico Especializado: Disponibilidade de suporte para resolver dúvidas técnicas e problemas complexos.
-Atualizações Regulares de Conhecimento: Informações sobre novas funcionalidades, atualizações de software e mudanças na infraestrutura.
+### Sessões Presenciais e Online
+
+- **Workshops Práticos**: Sessões hands-on onde os administradores aprendem a configurar, monitorar e gerenciar o sistema.
+- **Webinars Técnicos**: Palestras online sobre temas avançados, como segurança, backup e recuperação de dados.
+
+### Documentação Técnica Detalhada
+
+- **Guias de Administração**: Documentos que descrevem detalhadamente as tarefas administrativas, incluindo configuração de servidores, gerenciamento de usuários e monitoramento de performance.
+- **Procedimentos de Backup e Recuperação**: Instruções passo a passo para realizar backups e restaurar dados em caso de necessidade.
+
+### Acesso a Ferramentas de Monitoramento e Gestão
+
+- **Dashboard de Administração**: Interface centralizada para monitorar o estado do sistema, visualizar logs e gerenciar recursos.
+- **Ferramentas de Diagnóstico**: Software e scripts para identificar e resolver problemas técnicos rapidamente.
+
+### Políticas de Segurança e Compliance
+
+- **Treinamento em Segurança da Informação**: Educação sobre melhores práticas de segurança, incluindo gerenciamento de senhas, controle de acesso e proteção contra ameaças.
+- **Compliance com Regulamentações**: Orientações sobre como garantir que o sistema esteja em conformidade com legislações e normas aplicáveis, como a LGPD (Lei Geral de Proteção de Dados).
+
+### Suporte Continuado e Atualizações
+
+- **Acesso a Suporte Técnico Especializado**: Disponibilidade de suporte para resolver dúvidas técnicas e problemas complexos.
+- **Atualizações Regulares de Conhecimento**: Informações sobre novas funcionalidades, atualizações de software e mudanças na infraestrutura.
+
+[Início](#sumário)
 
 # 17. Glossário
+
+[Início](#sumário)
 
 # 18. Script SQL
 
