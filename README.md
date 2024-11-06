@@ -6,7 +6,7 @@ Repositório destinado aos estudos relacionados à disciplina de Engenharia de S
 - [1. Descrição do sistema](#1-descrição-do-sistema)
 - [2. Problema e descrição do negócio](#2-problema-e-descrição-do-negócio)
   - [2.1. Requisitos](#21-requisitos)
-    - [Requisitos Funcionas e Não funcionalidades](#requisitos-funcionas-e-não-funcionalidades)
+    - [Requisitos Funcionas e Não Funcionais](#requisitos-funcionas-e-não-funcionais)
 - [3. Visão geral do sistema.](#3-visão-geral-do-sistema)
 - [4. Diagrama ER](#4-diagrama-er)
 - [5. Diagrama de classes](#5-diagrama-de-classes)
@@ -93,7 +93,7 @@ O projeto a seguir apresenta um sistema desenvolvido para um petshop. A empresa 
 
 ## 2.1. Requisitos
 
-### Requisitos Funcionas e Não funcionalidades
+### Requisitos Funcionas e Não Funcionais
 
 | **Tipo de Requisito**         | **Descrição**                                                                                        |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------- |
